@@ -1,0 +1,89 @@
+{
+    "contributor": {
+        "tenant": " dsfds ",
+        "user": ""
+    },
+    "details": {},
+    "exit_status": {
+        "codes": [],
+        "file_location": "exit_status.txt"
+    },
+    "key": "ideas-toolbox-seeds-dsfdsf",
+    "name": "seeds dsfdsf",
+    "schema_version": "2.0.0",
+    "tools": [
+        {
+            "command": "",
+            "help": "dfdsf",
+            "key": "example_tool__test_func_1",
+            "maturity": "development",
+            "name": "dsfdsf",
+            "params": [
+                {
+                    "help": "",
+                    "hidden": false,
+                    "key": "cell_set_file",
+                    "name": "cell set file",
+                    "required": true,
+                    "type": {
+                        "display": {
+                            "group": "",
+                            "group_order": 0
+                        },
+                        "file_filters": [
+                            {
+                                "file_format": "avi",
+                                "file_structure": "archive",
+                                "file_type": "behavior_annotations"
+                            }
+                        ],
+                        "file_formats": [],
+                        "is_dir": false,
+                        "is_source": true,
+                        "multiple": false,
+                        "param_datatype": "string",
+                        "param_type": "ToolPathParam"
+                    }
+                },
+                {
+                    "help": "dfdf",
+                    "hidden": false,
+                    "key": "annotations_file",
+                    "name": "annotations_file",
+                    "required": false,
+                    "type": {
+                        "display": {
+                            "group": "",
+                            "group_order": 0
+                        },
+                        "file_filters": [
+                            {
+                                "file_format": "avi",
+                                "file_structure": "archive",
+                                "file_type": "behavior_annotations"
+                            }
+                        ],
+                        "file_formats": [],
+                        "is_dir": false,
+                        "is_source": true,
+                        "multiple": false,
+                        "param_datatype": "string",
+                        "param_type": "ToolPathParam"
+                    }
+                }
+            ],
+            "resources": {
+                "cpu": 1,
+                "gpu": 0,
+                "max_file_size": 1000,
+                "memory": 10000,
+                "storage": 10000
+            },
+            "results": [],
+            "toolkit": "Calcium Imaging Processing",
+            "version": "",
+            "visibility": "public"
+        }
+    ],
+    "version": "1.0.0"
+}
