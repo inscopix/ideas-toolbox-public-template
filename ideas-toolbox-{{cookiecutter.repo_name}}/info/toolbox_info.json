@@ -1,7 +1,7 @@
 {
     "contributor": {
         "tenant": "{{cookiecutter.tenant}}",
-        "user": ""
+        "user": "{{cookiecutter.user}}"
     },
     "details": {},
     "exit_status": {

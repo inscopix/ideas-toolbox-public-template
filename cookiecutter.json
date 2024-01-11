@@ -1,7 +1,8 @@
 {
     "toolbox_name": "my toolbox",
     "repo_name": "{{ cookiecutter.toolbox_name.lower().replace(' ', '-') }}",
-    "tenant": "inscopix",
+    "tenant": "{{cookiecutter.tenant}}",
+    "user": "{{cookiecutter.user}}",
     "_extensions": [
         "jinja2_time.TimeExtension"
     ]
