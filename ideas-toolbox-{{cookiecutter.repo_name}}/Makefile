@@ -115,14 +115,15 @@ toolbox-info:
 run: build clean
 	@bash check_tool.sh $(TOOL)
 	@echo "Running the  $(TOOL) tool in a Docker container. Outputs will be in /outputs/$(TOOL)"
+	-rm -rf $(PWD)/outputs/
 	docker run \
 			--platform ${PLATFORM} \
 			-v $(PWD)/data:/ideas/data \
-			-v $(PWD)/outputs:/ideas/outputs \
 			-v $(PWD)/inputs:/ideas/inputs \
 			-v $(PWD)/commands:/ideas/commands \
 			-e TC_NO_RENAME=$(TC_NO_RENAME) \
 			--name $(CONTAINER_NAME) \
 	    $(IMAGE_TAG) \
 		$(call run_command,$(TOOL)) \
+	&& docker cp $(CONTAINER_NAME):/ideas/outputs $(PWD)/outputs \
 	&& docker rm $(CONTAINER_NAME)
