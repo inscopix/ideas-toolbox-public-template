@@ -32,14 +32,28 @@ endif
 # credentials
 IDEAS_GITHUB_TOKEN_FILE=.ideas-github-token
 
+# profiler
+ifndef IDEAS_PROFILER
+	IDEAS_PROFILER=0
+endif
 
+ifeq ($(IDEAS_PROFILER),1)
 define run_command
     bash -c 'mkdir -p "/ideas/outputs/$1" \
-	&& cd "/ideas/outputs/$1" \
-	&& cp "/ideas/inputs/$1.json" "/ideas/outputs/$1/inputs.json" \
-	&& "/ideas/commands/$1.sh" \
-	&& rm "/ideas/outputs/$1/inputs.json"'
+        && cd "/ideas/outputs/$1" \
+        && cp "/ideas/inputs/$1.json" "/ideas/outputs/$1/inputs.json" \
+        && ( ideas-tools-profiler & "/ideas/commands/$1.sh" ) \
+	    && rm "/ideas/outputs/$1/inputs.json"'
 endef
+else
+define run_command
+    bash -c 'mkdir -p "/ideas/outputs/$1" \
+        && cd "/ideas/outputs/$1" \
+        && cp "/ideas/inputs/$1.json" "/ideas/outputs/$1/inputs.json" \
+        && "/ideas/commands/$1.sh" \
+	    && rm "/ideas/outputs/$1/inputs.json"'
+endef
+endif
 
 
 
