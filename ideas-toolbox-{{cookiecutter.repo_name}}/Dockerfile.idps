@@ -30,9 +30,10 @@ RUN apt update && apt upgrade -y \
     && apt install -y software-properties-common \
     && apt install -y gcc python3-dev \
     && apt install -y libgl1-mesa-glx libglib2.0-0 \
-    && apt install -y python3.9 git  python3-pip \
+    && apt install -y python3.9-dev git  python3-pip \
     && python3.9 -m pip install --upgrade pip \
-    && python3.9 -m pip install --no-cache-dir awscli boto3 click requests
+    && python3.9 -m pip install --no-cache-dir awscli boto3 click requests \
+    && apt-get update && apt-get install -y libgl1
 
 COPY "resources/idps*.sh" /idps.sh
 
