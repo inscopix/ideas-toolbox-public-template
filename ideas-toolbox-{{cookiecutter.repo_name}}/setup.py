@@ -22,7 +22,7 @@ setup(
     url="https://github.com/inscopix/ideas-toolbox-{{cookiecutter.repo_name}}",
     install_requires=[
         f"ideas-python-utils@git+https://{token}@github.com/inscopix/ideas-python-utils.git@10.4.1",
-        f"ideas-commons@git+https://{token}@github.com/inscopix/ideas-commons.git@1.8.0",
+        f"ideas-commons@git+https://{token}@github.com/inscopix/ideas-commons.git@1.15.0",
         f"ideas-tools-profiler@git+https://{token}@github.com/inscopix/ideas-tools-profiler.git@0.1.0",
         "isx==1.0.3",
         "requests==2.27.1",  # required by BE
